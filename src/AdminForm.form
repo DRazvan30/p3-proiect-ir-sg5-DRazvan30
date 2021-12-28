@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="AdminForm">
+  <grid id="27dc6" binding="adminForm" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="8be" class="javax.swing.JButton" binding="adaugareButton">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ADAUGA CARTE"/>
+        </properties>
+      </component>
+      <component id="7e4da" class="javax.swing.JButton" binding="stergereButton">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="STERGE CARTE"/>
+        </properties>
+      </component>
+      <component id="a34b2" class="javax.swing.JButton" binding="logoutButton">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="LOGOUT"/>
+        </properties>
+      </component>
+      <component id="c78ef" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="VIZUALIZARE CARTI"/>
+        </properties>
+      </component>
+      <component id="8dc7d" class="javax.swing.JComboBox" binding="cartiBox">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model/>
+        </properties>
+      </component>
+      <component id="3c3ad" class="javax.swing.JComboBox" binding="userBox">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="3e579" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="VIZUALIZARE USERI"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
