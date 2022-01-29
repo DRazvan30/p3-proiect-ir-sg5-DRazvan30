@@ -53,7 +53,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
             if(username.equals("admin") && pass.equals("123")){
 
-                JOptionPane.showMessageDialog(null,"Admin cu succes");
+                JOptionPane.showMessageDialog(null,"Logat ca admin");
                 this.setVisible(false);
                 new AdminForm();
             }
@@ -84,12 +84,12 @@ public class LoginFrame extends JFrame implements ActionListener {
                     pst1.executeUpdate();
 
                     if(rs.next()){
-                        JOptionPane.showMessageDialog(null,"Login succsessss");
+                        JOptionPane.showMessageDialog(null,"Login succsessfully");
                         this.setVisible(false);
                         new UserFrame();
                     }
                     else {
-                        JOptionPane.showMessageDialog(null,"nu EXISTA");
+                        JOptionPane.showMessageDialog(null,"No Match");
                         this.setVisible(false);
                         new MainFrame();
                     }

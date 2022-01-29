@@ -10,7 +10,7 @@ public class RentForm extends JFrame implements ActionListener {
     private JComboBox cartiBox;
     private JButton imprumutaButton;
     private JButton cancelButton;
-    private JButton returneazaButton;
+
 
     private final String url="jdbc:postgresql://localhost:5432/P3";
     private final String user="postgres";
@@ -35,7 +35,7 @@ public class RentForm extends JFrame implements ActionListener {
     public void addActionEvent(){
         imprumutaButton.addActionListener(this);
         cancelButton.addActionListener(this);
-        returneazaButton.addActionListener(this);
+
     }
 
     public void insertInDropBox1(){
@@ -84,27 +84,9 @@ public class RentForm extends JFrame implements ActionListener {
             }catch (Exception ee){
                 ee.printStackTrace();
             }
-
-
         }
 
 
-        /*if(e.getSource()==returneazaButton){
 
-            try {
-
-                String query = "update utilizatori set id=(select id from carti where titlu=?) where logged_in='1';";
-                java.sql.Connection conn = DriverManager.getConnection(url, user, password);
-                pst = conn.prepareStatement(query);
-                //pst.setString(1,carte_id);
-                pst.executeUpdate();
-
-
-
-
-            }catch (Exception eee){
-                eee.printStackTrace();
-            }
-        }*/
     }
 }

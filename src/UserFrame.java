@@ -3,11 +3,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UserFrame extends JFrame implements ActionListener {
+
+
+
     private JButton imprumutaButton;
     private JButton logoutButton;
     private JPanel UserFrame;
+    private JButton ReturButton;
+
+    private final String url="jdbc:postgresql://localhost:5432/P3";
+    private final String user="postgres";
+    private final String password="1524";
+
+    PreparedStatement pst = null;
+    PreparedStatement pst1 = null;
+    ResultSet rs = null;
 
     UserFrame(){
 
@@ -38,8 +51,49 @@ public class UserFrame extends JFrame implements ActionListener {
             new RentForm();
         }
 
+        if(e.getSource()==ReturButton) {
+
+            try {
+
+                //String query = "update utilizatori set id=0 where logged_in='1';";
+                String query = "select id from utilizatori where logged_in='1';";
+                java.sql.Connection conn = DriverManager.getConnection(url, user, password);
+                pst = conn.prepareStatement(query);
+                rs = pst.executeQuery();
+
+                if(rs.next()){
+                         int id = rs.getInt("id");
+
+                         if(id!=0){
+                             String query1 = "update utilizatori set id=0 where logged_in='1';";
+                             java.sql.Connection conn1 = DriverManager.getConnection(url, user, password);
+                             pst = conn1.prepareStatement(query1);
+                             pst.executeUpdate();
+                             JOptionPane.showMessageDialog(null,"Cartea a fost returnata");
 
 
+                         }
+                         else{
+                             JOptionPane.showMessageDialog(null,"Nu a fost imprumutata nicio carte");
+                         }
+
+
+
+                }
+
+
+
+
+
+
+
+
+            }catch (Exception eee){
+                eee.printStackTrace();
+            }
+
+
+        }
 
 
     }
@@ -48,6 +102,7 @@ public class UserFrame extends JFrame implements ActionListener {
 
         imprumutaButton.addActionListener(this);
         logoutButton.addActionListener(this);
+        ReturButton.addActionListener(this);
     }
 
     public static void set_false_log_in(){
@@ -72,4 +127,5 @@ public class UserFrame extends JFrame implements ActionListener {
             e.printStackTrace();
         }
     }
+
 }
